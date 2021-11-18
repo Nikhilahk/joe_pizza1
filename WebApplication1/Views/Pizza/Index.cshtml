@@ -3,13 +3,19 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    body {
+        background-color: wheat
+    }
+</style>
 
-<h1>Index</h1>
+<h1>Choose ur favourite</h1>
+
 
 <p>
     <a asp-action="Create" id="Create">Create New</a>
 </p>
-<div class=" py-5 bg-light">
+<div class=" py-5 bg-light" style="background-color :wheat">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
@@ -35,8 +41,8 @@
                                 <div class="btn-group">
                                     <a asp-action="Index" asp-controller="Home" class="btn btn-secondary" id="Back">Back</a>
                                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" id="Delete">Delete</a>
-                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-danger" id="Edit">Edit</a>
-                                    <a class="btn btn-sm btn-outline-secondary" asp-controller="Cart" asp-action="Buy" asp-route-id="@item.Id" id="CartAdd">Add to Cart</a>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning" id="Edit">Edit</a>
+                                    <a class="btn btn-success" asp-controller="Cart" asp-action="Buy" asp-route-id="@item.Id" id="CartAdd">Add to Cart</a>
                                 </div>
 
                             </div>

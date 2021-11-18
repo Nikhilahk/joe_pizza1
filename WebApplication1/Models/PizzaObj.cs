@@ -11,8 +11,8 @@ namespace WebApplication1.Models
         public PizzaObj()
         {
             Pizzas = new List<Pizza> {
-                new Pizza{Id=1001,Name="Margeretta",Image="https://d3nn873nee648n.cloudfront.net/900x600/19095/120-MZ895546.jpg",Cost=80},
-                new Pizza{Id=1002,Name="cheesy pizza",Image="https://d3nn873nee648n.cloudfront.net/900x600/19095/120-MZ895546.jpg",Cost=100},
+                new Pizza{Id=1001,Name="Margeretta",Image="https://static.toiimg.com/thumb/56868564.cms?imgsize=1948751&width=800&height=800",Cost=100},
+                new Pizza{Id=1002,Name="cheese and corn pizza",Image="https://image.shutterstock.com/image-photo/colorful-sliced-pizza-mozzarella-cheese-260nw-269459642.jpg",Cost=150},
             };
         }
         public List<Pizza> GetPizzas() =>Pizzas;

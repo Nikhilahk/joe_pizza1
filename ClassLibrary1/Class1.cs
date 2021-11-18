@@ -26,7 +26,7 @@ namespace ClassLibrary1
             Assert.AreEqual(Actname,ExName);
             p = po.GetPizzaById(1002);
             Actname = p.Name;
-            ExName = "cheesy pizza";
+            ExName = "cheese and corn pizza";
             Assert.AreEqual(ExName, Actname);
            
         }
@@ -35,7 +35,7 @@ namespace ClassLibrary1
         {
             IWebDriver driver = null;
             string url = "http://localhost:36069";
-            driver = new ChromeDriver(@"C:\DoverCorp");
+            driver = new ChromeDriver(@"C:\chromedriver_win32");
             driver.Navigate().GoToUrl(url);
             IWebElement pizza = driver.FindElement(By.Id("Pizza"));
             pizza.SendKeys(Keys.Enter);
@@ -58,7 +58,7 @@ namespace ClassLibrary1
             preurl = driver.Url;
             Acturl = "http://localhost:36069/Cart/Checkout";
             Assert.AreEqual(Acturl, preurl);
-            IWebElement pay = driver.FindElement(By.Id("Pay"));
+            IWebElement pay = driver.FindElement(By.Id("pay"));
             pay.SendKeys(Keys.Enter);
             Thread.Sleep(1000);
             preurl = driver.Url;

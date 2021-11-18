@@ -2,44 +2,56 @@
 @{
     ViewData["Title"] = "Index";
 }
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+<!-- Latest compiled and minified Locales -->
+<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/locale/bootstrap-table-zh-CN.min.js"></script>
 
 <br />
-<h1>Cart</h1>
+<style>
+    body {
+        background-color: wheat
+    }
+</style>
+<h1 style="color:forestgreen;background-color:transparent">CART-SUMMARY</h1>
 
-<table class="table">
+<table class="table" style="background-color:transparent;color:black">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Sub Total</th>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th>SUB TOTAL</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in ViewBag.cart)
         {
-        <tr>
-            <td>@item.Product.Id</td>
-            <td>@item.Product.Name</td>
-            <td>@item.Product.Cost</td>
-            <td>@item.Quantity</td>
-            <td>@(item.Product.Cost * item.Quantity)</td>
-        </tr>
+            <tr>
+                <td>@item.Product.Id</td>
+                <td>@item.Product.Name</td>
+                <td>@item.Product.Cost</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Product.Cost * item.Quantity)</td>
+            </tr>
         }
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="4">Total</th>
+            <th colspan="4">TOTAL</th>
             <th>@ViewBag.total</th>
         </tr>
     </tfoot>
 </table>
 <br />
 
-<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-    <a type="button" class="btn btn-danger m-1" asp-action="clearCart" asp-controller="Cart" id="ClearCart">Clear Cart</a>
-    <a class="btn btn-warning m-1" asp-controller="Pizza" asp-action="Index" id="ContinueShopping">Continue Shopping</a>
-    <a class="btn btn-success m-1" asp-controller="Cart" asp-action="Checkout" id="Checkout">Checkout</a>
+<div class="btn-outline" role="group" aria-label="Basic mixed styles example">
+    <a type="button" class="btn btn-outline-danger m-1" asp-action="clearCart" asp-controller="Cart">Clear Cart</a>
+    <a class="btn btn-outline-warning m-1" asp-controller="Pizza" asp-action="Index">Back to Shopping</a>
+    <a class="btn btn-outline-success m-1" asp-controller="Cart" asp-action="Checkout" id="Checkout">Checkout</a>
 </div>
 
